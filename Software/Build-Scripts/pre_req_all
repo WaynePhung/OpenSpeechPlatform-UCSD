@@ -18,11 +18,11 @@ if [ $OS = "Darwin" ]; then
   fi
   
   echo Install pre-requisite packages
-  brew install portaudio poco cereal cmake pkg-config composer php72 node
+  brew install bash portaudio poco cereal cmake pkg-config composer php72 node
 elif [ $OS = "Linux" ]; then
   echo Install pre-requisite packages
   sudo apt-get update
-  for i in alsa-base alsa-utils libasound2-dev portaudio19-dev \
+  for i in bash alsa-base alsa-utils libasound2-dev portaudio19-dev \
           libpoco-dev libcereal-dev cmake sqlite sqlite3 php php-mbstring php-xml composer \
           zip unzip php-sqlite3 nodejs yarn; do
     sudo apt-get install -y $i
@@ -33,6 +33,6 @@ elif [ $OS = "Linux" ]; then
 elif VERB="$( which yum )" 2> /dev/null; then
  echo Install pre-requisite packages
  yum update
- yum -y install alsa-base alsa-utils libasound2-dev portaudio19-dev libpoco-dev libcereal-dev\ 	  cmake sqlite sqlite3 php php-mbstring php-xml composer zip unzip php-sqlite3 \
+ yum -y install bash alsa-base alsa-utils libasound2-dev portaudio19-dev libpoco-dev libcereal-dev\ 	  cmake sqlite sqlite3 php php-mbstring php-xml composer zip unzip php-sqlite3 \
  	libnode-dev node-gyp libssl-dev npm git
 fi
